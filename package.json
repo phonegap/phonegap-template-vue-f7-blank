@@ -1,0 +1,18 @@
+{
+  "name": "phonegap-template-vue-f7-blank",
+  "version": "1.0.0",
+  "description": "A blank PhoneGap template using Vue.js and Framework7",
+  "main": "index.js",
+  "keywords": [
+    "ecosystem:phonegap",
+    "ecosystem:cordova",
+    "cordova:template",
+    "phonegap:template"
+  ],
+  "bugs": {
+    "url": "https://github.com/phonegap/phonegap-template-vue-f7-blank/issues"
+  },
+  "homepage": "https://github.com/phonegap/phonegap-template-vue-f7-blank#readme",
+  "author": "PhoneGap Team",
+  "license": "Apache-2.0"
+}
