@@ -1,17 +1,17 @@
-/* eslint-disable import/no-extraneous-dependencies, global-require */
+/* eslint-disable import/no-extraneous-dependencies, global-require, no-var, vars-on-top */
 
-const path = require('path');
-const config = require('../config');
-const utils = require('./utils');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const baseWebpackConfig = require('./webpack.base.conf');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const env = process.env.NODE_ENV === 'testing'
+var path = require('path');
+var config = require('../config');
+var utils = require('./utils');
+var webpack = require('webpack');
+var merge = require('webpack-merge');
+var baseWebpackConfig = require('./webpack.base.conf');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env;
 
-const webpackConfig = merge(baseWebpackConfig, {
+var webpackConfig = merge(baseWebpackConfig, {
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap }),
   },
@@ -66,7 +66,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           module.resource &&
           /\.js$/.test(module.resource) &&
           module.resource.indexOf(
-            path.join(__dirname, '../node_modules'),
+            path.join(__dirname, '../node_modules')
           ) === 0
         );
       },
@@ -81,7 +81,7 @@ const webpackConfig = merge(baseWebpackConfig, {
 });
 
 if (config.build.productionGzip) {
-  const CompressionWebpackPlugin = require('compression-webpack-plugin');
+  var CompressionWebpackPlugin = require('compression-webpack-plugin');
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
@@ -90,7 +90,7 @@ if (config.build.productionGzip) {
       test: new RegExp(`\\.(${config.build.productionGzipExtensions.join('|')})$`),
       threshold: 10240,
       minRatio: 0.8,
-    }),
+    })
   );
 }
 

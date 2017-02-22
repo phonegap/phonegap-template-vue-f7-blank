@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-var, vars-on-top */
 /* global env, rm, cp, mkdir */
 
 // https://github.com/shelljs/shelljs
@@ -7,16 +7,16 @@ require('shelljs/global');
 
 env.NODE_ENV = 'production';
 
-const path = require('path');
-const config = require('../config');
-const ora = require('ora');
-const webpack = require('webpack');
-const webpackConfig = require('./webpack.prod.conf');
+var path = require('path');
+var config = require('../config');
+var ora = require('ora');
+var webpack = require('webpack');
+var webpackConfig = require('./webpack.prod.conf');
 
-const spinner = ora('building for production...');
+var spinner = ora('building for production...');
 spinner.start();
 
-const assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory);
+var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory);
 rm('-rf', assetsPath);
 mkdir('-p', assetsPath);
 cp('-R', 'static/*', assetsPath);

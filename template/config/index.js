@@ -1,7 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies, global-require */
+/* eslint-disable import/no-extraneous-dependencies, global-require, no-var, vars-on-top */
 
 // see http://vuejs-templates.github.io/webpack for documentation.
-const path = require('path');
+var path = require('path');
 
 module.exports = {
   build: {

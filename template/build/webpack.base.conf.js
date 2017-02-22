@@ -1,17 +1,17 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-var, vars-on-top */
 
-const path = require('path');
-const config = require('../config');
-const utils = require('./utils');
+var path = require('path');
+var config = require('../config');
+var utils = require('./utils');
 
-const projectRoot = path.resolve(__dirname, '../');
+var projectRoot = path.resolve(__dirname, '../');
 
-const env = process.env.NODE_ENV;
+var env = process.env.NODE_ENV;
 // check env & config/index.js to decide whether to enable CSS source maps for the
 // various preprocessor loaders added to vue-loader at the end of this file
-const cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap);
-const cssSourceMapProd = (env === 'production' && config.build.productionSourceMap);
-const useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
+var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap);
+var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap);
+var useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
 
 module.exports = {
   entry: {

@@ -1,11 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-var, vars-on-top */
 
-const path = require('path');
-const config = require('../config');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
+var config = require('../config');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 exports.assetsPath = (_path) => {
-  const assetsSubDirectory = process.env.NODE_ENV === 'production'
+  var assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory;
   return path.posix.join(assetsSubDirectory, _path);
@@ -15,8 +15,8 @@ exports.cssLoaders = (options) => {
   options = options || {}; // eslint-disable-line no-param-reassign
   // generate loader string to be used with extract text plugin
   function generateLoaders(loaders) {
-    const sourceLoader = loaders.map((loader) => {
-      let extraParamChar;
+    var sourceLoader = loaders.map((loader) => {
+      var extraParamChar;
       if (/\?/.test(loader)) {
         loader = loader.replace(/\?/, '-loader?'); // eslint-disable-line no-param-reassign
         extraParamChar = '&';
@@ -49,10 +49,10 @@ exports.cssLoaders = (options) => {
 
 // Generate loaders for standalone style files (outside of .vue)
 exports.styleLoaders = (options) => {
-  const output = [];
-  const loaders = exports.cssLoaders(options);
-  for (const extension in loaders) { // eslint-disable-line guard-for-in, no-restricted-syntax
-    const loader = loaders[extension];
+  var output = [];
+  var loaders = exports.cssLoaders(options);
+  for (var extension in loaders) { // eslint-disable-line guard-for-in, no-restricted-syntax
+    var loader = loaders[extension];
     output.push({
       test: new RegExp(`\\.${extension}$`),
       loader,

@@ -1,7 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-var, vars-on-top */
 
 require('eventsource-polyfill');
-const hotClient = require('webpack-hot-middleware/client?noInfo=true&reload=true');
+var hotClient = require('webpack-hot-middleware/client?noInfo=true&reload=true');
 
 hotClient.subscribe((event) => {
   if (event.action === 'reload') {

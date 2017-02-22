@@ -1,33 +1,33 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-var, vars-on-top */
 
 require('./check-versions')();
-const config = require('../config');
+var config = require('../config');
 
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV);
-const path = require('path');
-const express = require('express');
-const webpack = require('webpack');
-const opn = require('opn');
-const proxyMiddleware = require('http-proxy-middleware');
-const webpackConfig = process.env.NODE_ENV === 'testing'
+var path = require('path');
+var express = require('express');
+var webpack = require('webpack');
+var opn = require('opn');
+var proxyMiddleware = require('http-proxy-middleware');
+var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf');
 
 // default port where dev server listens for incoming traffic
-const port = process.env.PORT || config.dev.port;
+var port = process.env.PORT || config.dev.port;
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
-const proxyTable = config.dev.proxyTable;
+var proxyTable = config.dev.proxyTable;
 
-const app = express();
-const compiler = webpack(webpackConfig);
+var app = express();
+var compiler = webpack(webpackConfig);
 
-const devMiddleware = require('webpack-dev-middleware')(compiler, {
+var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true,
 });
 
-const hotMiddleware = require('webpack-hot-middleware')(compiler, {
+var hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: () => {},
 });
 // force page reload when html-webpack-plugin template changes
@@ -40,7 +40,7 @@ compiler.plugin('compilation', (compilation) => {
 
 // proxy api requests
 Object.keys(proxyTable).forEach((context) => {
-  let options = proxyTable[context];
+  var options = proxyTable[context];
   if (typeof options === 'string') {
     options = { target: options };
   }
@@ -57,10 +57,10 @@ app.use(devMiddleware);
 app.use(hotMiddleware);
 
 // serve pure static assets
-const staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory);
+var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory);
 app.use(staticPath, express.static('./static'));
 
-const uri = `http://localhost:${port}`;
+var uri = `http://localhost:${port}`;
 
 devMiddleware.waitUntilValid(() => {
   console.log(`> Listening at ${uri}\n`);

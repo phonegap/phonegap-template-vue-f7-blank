@@ -1,12 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-var, vars-on-top */
 
-const config = require('../config');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const utils = require('./utils');
-const baseWebpackConfig = require('./webpack.base.conf');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FriendlyErrors = require('friendly-errors-webpack-plugin');
+var config = require('../config');
+var webpack = require('webpack');
+var merge = require('webpack-merge');
+var utils = require('./utils');
+var baseWebpackConfig = require('./webpack.base.conf');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var FriendlyErrors = require('friendly-errors-webpack-plugin');
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
