@@ -21,7 +21,6 @@
 </template>
 
 <script>
-  /* global window */
   import Home from './components/pages/Home';
 
   export default {
