@@ -1,5 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies, global-require */
+
 // see http://vuejs-templates.github.io/webpack for documentation.
-var path = require('path')
+const path = require('path');
 
 module.exports = {
   build: {
@@ -14,7 +16,7 @@ module.exports = {
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
     productionGzip: false,
-    productionGzipExtensions: ['js', 'css']
+    productionGzipExtensions: ['js', 'css'],
   },
   dev: {
     env: require('./dev.env'),
@@ -27,6 +29,6 @@ module.exports = {
     // (https://github.com/webpack/css-loader#sourcemaps)
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
-    cssSourceMap: false
-  }
-}
+    cssSourceMap: false,
+  },
+};

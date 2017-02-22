@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 // This is a karma config file. For more details see
 //   http://karma-runner.github.io/0.13/config/configuration-file.html
 // we are also using it with karma-webpack
@@ -41,7 +43,7 @@ webpackConfig.module.loaders.some((loader) => {
   return false;
 });
 
-module.exports = function (config) {
+module.exports = (config) => {
   config.set({
     // to run in additional browsers:
     // 1. install corresponding karma launcher
