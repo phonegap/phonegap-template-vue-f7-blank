@@ -1,6 +1,8 @@
-import Vue from 'vue'; // eslint-disable-line no-unused-vars
+/* eslint-disable no-unused-vars */
+
+import Vue from 'vue';
 // Import F7
-import Framework7 from 'framework7'; // eslint-disable-line no-unused-vars
+import Framework7 from 'framework7';
 
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue';
