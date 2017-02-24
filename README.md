@@ -26,9 +26,6 @@ then
 
 ```
 cd MyAppName
-```
-
-```
 npm install
 ```
 
@@ -44,16 +41,9 @@ You can then open the app in your browser by visiting [localhost:8080](http://lo
 
 Open it in the iOS Simulator by running (in another terminal):
 
-```
-cordova platform add ios
-```
+`cordova platform add ios` or `phonegap platform add ios`
 
-or
-
-```
-phonegap platform add ios
-```
-
+then
 
 ```
 npm run cordova-run-ios
@@ -61,15 +51,7 @@ npm run cordova-run-ios
 
 Or in the Android emulator with:
 
-```
-cordova platform add android
-```
-
-or
-
-```
-phonegap platform add android
-```
+`cordova platform add android` or `phonegap platform add android`
 
 then
 
