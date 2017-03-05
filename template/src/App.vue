@@ -7,7 +7,7 @@
 
     <!-- Main Views -->
     <f7-views>
-      <f7-view iid="main-view" url="/" :init="true" :dynamic-navbar="true" navbar-through main>
+      <f7-view id="main-view" url="/" :init="true" :dynamic-navbar="true" navbar-through main>
         <!-- Navbar -->
         <f7-navbar v-if="isiOS" title="Home"></f7-navbar>
         <!-- Pages -->
