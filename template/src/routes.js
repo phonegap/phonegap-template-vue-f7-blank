@@ -3,10 +3,10 @@ import Home from './components/pages/Home';
 export default [
   {
     path: '/',
-    component: Home,
+    component: Home
   },
   {
     path: '/home/',
-    component: Home,
-  },
+    component: Home
+  }
 ];

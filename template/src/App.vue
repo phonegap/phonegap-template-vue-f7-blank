@@ -21,9 +21,9 @@
   export default {
     name: 'App',
     computed: {
-      isiOS() {
+      isiOS () {
         return window.isiOS;
-      },
-    },
+      }
+    }
   };
 </script>
