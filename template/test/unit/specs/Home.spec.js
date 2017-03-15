@@ -20,8 +20,8 @@ describe('Home.vue', () => {
       // Init Framework7 by passing parameters here
       // The absolute minimum is an empty routes array
       framework7: {
-        routes: [],
-      },
+        routes: []
+      }
     });
   });
 

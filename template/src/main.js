@@ -52,12 +52,12 @@ new Vue({ // eslint-disable-line no-new
     routes: Routes,
     animateNavBackIcon: window.Framework7.prototype.device.ios,
     pushState: true,
-    pushStateNoAnimation: true,
+    pushStateNoAnimation: true
   },
   // Register App Component
   components: {
-    app: App,
-  },
+    app: App
+  }
 });
 
 // Ye olde Device Ready
