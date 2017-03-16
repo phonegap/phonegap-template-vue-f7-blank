@@ -17,6 +17,7 @@
     "cordova-run-android": "npm run build && cordova run android"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "framework7": "^1.5.3",
     "framework7-vue": "^0.8.5",
     "vue": "^2.1.0",
