@@ -2,7 +2,7 @@
 
 Vue.js, Framework7, and Cordova / PhoneGap Template with Babel, Webpack and Hot Reloading
 
-![example image](https://raw.githubusercontent.com/phonegap/phonegap-template-vue-f7-blank/master/example-blank.jpg)
+![example image](https://github.com/phonegap/phonegap-template-vue-f7-blank/raw/master/example-blank.png)
 
 ## Getting Started
 
