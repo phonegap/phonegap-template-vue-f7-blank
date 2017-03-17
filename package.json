@@ -1,6 +1,6 @@
 {
   "name": "phonegap-template-vue-f7-blank",
- "version": "0.9.0",
+  "version": "1.0.0",
   "description": "A blank PhoneGap template using Vue.js and Framework7",
   "main": "index.js",
   "keywords": [
