@@ -1,6 +1,5 @@
 /* global window document f7 */
 
-import 'whatwg-fetch';
 import 'babel-polyfill';
 
 // The Vue build version to load with the `import` command
