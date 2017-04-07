@@ -19,9 +19,13 @@ import Routes from './routes';
 // Import App
 import App from './App';
 
+// Set up some useful globals
+window.isMaterial = !window.Framework7.prototype.device.ios;
+window.isiOS = window.Framework7.prototype.device.ios;
+
 // Import F7 iOS Theme Styles
 /* eslint-disable global-require */
-if (window.Framework7.prototype.device.ios) {
+if (window.isiOS) {
   const Framework7Theme =
     require('framework7/dist/css/framework7.ios.min.css');
   const Framework7ThemeColors =
@@ -34,10 +38,6 @@ if (window.Framework7.prototype.device.ios) {
     require('framework7/dist/css/framework7.material.colors.min.css');
 }
 
-// Set up some useful globals
-window.isMaterial = !window.Framework7.prototype.device.ios;
-window.isiOS = window.Framework7.prototype.device.ios;
-
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue);
 
@@ -48,9 +48,9 @@ new Vue({ // eslint-disable-line no-new
   // Init Framework7 by passing parameters here
   framework7: {
     root: '#app',
-    material: !window.Framework7.prototype.device.ios,
+    material: window.isMaterial,
     routes: Routes,
-    animateNavBackIcon: window.Framework7.prototype.device.ios,
+    animateNavBackIcon: window.isiOS,
     pushState: true,
     pushStateNoAnimation: true
   },
