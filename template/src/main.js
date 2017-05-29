@@ -85,3 +85,11 @@ document.addEventListener('deviceready', () => {
   // Bind to the back button for Android
   document.addEventListener('backbutton', handleBackButton);
 });
+
+// Load service worker
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('sw.js')
+  .catch(function (err) {
+    console.error('Unable to register service worker.', err);
+  });
+}
