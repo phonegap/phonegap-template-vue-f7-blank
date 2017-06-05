@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <!--
       Customize this policy to fit your own app's needs. For more guidance, see:
         https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
@@ -11,20 +15,36 @@
           * Enable inline JS: add 'unsafe-inline' to default-src
     -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
-
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <title>My App</title>
+    <title>MyApp</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/img/icons/favicon-16x16.png">
+    <!--[if IE]><link rel="shortcut icon" href="./static/img/icons/favicon.ico"><![endif]-->
+    <!-- Add to home screen for Android and modern mobile browsers -->
+    <link rel="manifest" href="./static/manifest.json">
+    <meta name="theme-color" content="#4DBA87">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="f7vuepwa">
+    <link rel="apple-touch-icon" href="./static/img/icons/apple-touch-icon-152x152.png">
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="./static/img/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <% for (var chunk of webpack.chunks) {
+        for (var file of chunk.files) {
+          if (file.match(/\.(js|css)$/)) { %>
+    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">This is your fallback content in case JavaScript fails to load.</div>
     <script src="cordova.js"></script>
+    <!-- Todo: only include in production -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
     <!-- built files will be auto injected -->
   </body>
 </html>

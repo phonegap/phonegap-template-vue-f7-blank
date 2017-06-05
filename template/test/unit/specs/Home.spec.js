@@ -5,7 +5,7 @@ import Framework7 from 'framework7'; // eslint-disable-line no-unused-vars
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue';
 
-import Home from 'src/components/pages/Home';
+import Home from '@/components/pages/Home';
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue);

@@ -7,7 +7,7 @@ import Framework7 from 'framework7';
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue';
 
-import App from 'src/App';
+import App from '@/App';
 
 let vm;
 
