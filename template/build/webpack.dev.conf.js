@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies, no-var, vars-on-top */
 
+var path = require('path');
 var config = require('../config');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
@@ -7,6 +8,7 @@ var utils = require('./utils');
 var baseWebpackConfig = require('./webpack.base.conf');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var FriendlyErrors = require('friendly-errors-webpack-plugin');
+var workboxPlugin = require('workbox-webpack-plugin');
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
@@ -34,5 +36,10 @@ module.exports = merge(baseWebpackConfig, {
       inject: true,
     }),
     new FriendlyErrors(),
+    new workboxPlugin({
+       globDirectory: config.build.assetsRoot,
+       staticFileGlobs: ['**/*.{html,js,css}'],
+       swDest: path.join(config.build.assetsRoot, 'sw.js'),
+     }),
   ],
 });
