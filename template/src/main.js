@@ -1,5 +1,3 @@
-/* global window document f7 */
-
 import 'babel-polyfill';
 
 // The Vue build version to load with the `import` command
