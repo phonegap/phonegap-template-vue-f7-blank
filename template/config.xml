@@ -19,7 +19,6 @@
         <preference name="windows-target-version" value="10.0" />
     </platform>
     <platform name="android">
-        <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
