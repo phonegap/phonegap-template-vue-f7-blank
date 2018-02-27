@@ -10,14 +10,13 @@
     </f7-block>
   </f7-page>
 </template>
-
 <script>
-  export default {
-    name: 'Home',
-    data () {
-      return {
-        title: 'Hello World'
-      };
-    }
-  };
+export default {
+  name: 'Home',
+  data() {
+    return {
+      title: 'Hello World'
+    };
+  }
+};
 </script>

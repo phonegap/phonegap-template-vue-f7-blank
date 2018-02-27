@@ -1,12 +1,13 @@
-import Home from './components/pages/Home';
+import HomePage from './pages/home.vue';
+import NotFoundPage from './pages/not-found.vue';
 
 export default [
   {
     path: '/',
-    component: Home
+    component: HomePage
   },
   {
-    path: '/home/',
-    component: Home
+    path: '(.*)',
+    component: NotFoundPage
   }
 ];
