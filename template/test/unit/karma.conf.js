@@ -16,26 +16,26 @@ var projectRoot = path.resolve(__dirname, '../../');
 var webpackConfig = merge(baseConfig, {
   // use inline sourcemap for karma-sourcemap-loader
   module: {
-    loaders: utils.styleLoaders(),
+    loaders: utils.styleLoaders()
   },
   devtool: '#inline-source-map',
   vue: {
     loaders: {
-      js: 'babel-loader',
-    },
+      js: 'babel-loader'
+    }
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': require('../../config/test.env'), // eslint-disable-line global-require
-    }),
-  ],
+      'process.env': require('../../config/test.env') // eslint-disable-line global-require
+    })
+  ]
 });
 
 // no need for app entry during tests
 delete webpackConfig.entry;
 
 // Use babel for test files too
-webpackConfig.module.loaders.some((loader) => {
+webpackConfig.module.loaders.some(loader => {
   if (/^babel(-loader)?$/.test(loader.loader)) {
     loader.include.push(path.resolve(projectRoot, 'test/unit'));
     return true;
@@ -43,7 +43,7 @@ webpackConfig.module.loaders.some((loader) => {
   return false;
 });
 
-module.exports = (config) => {
+module.exports = config => {
   config.set({
     // to run in additional browsers:
     // 1. install corresponding karma launcher
@@ -54,18 +54,15 @@ module.exports = (config) => {
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap'],
+      './index.js': ['webpack', 'sourcemap']
     },
     webpack: webpackConfig,
     webpackMiddleware: {
-      noInfo: true,
+      noInfo: true
     },
     coverageReporter: {
       dir: './coverage',
-      reporters: [
-        { type: 'lcov', subdir: '.' },
-        { type: 'text-summary' },
-      ],
-    },
+      reporters: [{ type: 'lcov', subdir: '.' }, { type: 'text-summary' }]
+    }
   });
 };
