@@ -29,8 +29,8 @@ export default {
         return this.$f7.closeModal();
       }
       // If we have a back button, we want it to go back
-      if (this.$f7.mainView.history.length > 1) {
-        return this.$f7.mainView.router.back();
+      if (this.$f7.views.main.router.history.length > 1) {
+        return this.$f7.views.main.router.back();
       }
       // Default to closing the app
       return window.navigator.app.exitApp();
