@@ -11,10 +11,10 @@ import Framework7Vue from 'framework7-vue/dist/framework7-vue.esm.bundle.js';
 // Import F7 Styles
 import Framework7Styles from 'framework7/dist/css/framework7.css';
 
-import Home from 'src/components/pages/Home';
+import Home from '@/pages/home';
 
 // Init F7 Vue Plugin
-Vue.use(Framework7Vue);
+Vue.use(Framework7Vue, Framework7);
 
 let vm;
 
@@ -43,7 +43,7 @@ describe('Home.vue', () => {
       expect(Home.data().title).to.equal('Hello World');
     });
     it('should have a content-block-title that displays `data().title`', () => {
-      expect(vm.$el.querySelector('.content-block-title').textContent).to.equal(
+      expect(vm.$el.querySelector('.block-title').textContent).to.equal(
         Home.data().title
       );
     });

@@ -11,12 +11,12 @@ import Framework7Vue from 'framework7-vue/dist/framework7-vue.esm.bundle.js';
 // Import F7 Styles
 import Framework7Styles from 'framework7/dist/css/framework7.css';
 
-import App from 'src/App';
+import App from '@/app';
 
 let vm;
 
 // Init F7 Vue Plugin
-Vue.use(Framework7Vue);
+Vue.use(Framework7Vue, Framework7);
 
 describe('App.vue', () => {
   beforeEach(() => {
