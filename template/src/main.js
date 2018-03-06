@@ -1,56 +1,40 @@
-import 'babel-polyfill';
-
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+/* eslint-disable no-unused-vars */
+// Import Vue
 import Vue from 'vue';
 
 // Import F7
-/* eslint-disable no-unused-vars */
-import Framework7 from 'framework7';
+import Framework7 from 'framework7/dist/framework7.esm.bundle.js';
 
 // Import F7 Vue Plugin
-import Framework7Vue from 'framework7-vue';
+import Framework7Vue from 'framework7-vue/dist/framework7-vue.esm.bundle.js';
+
+// Import F7 Styles
+import Framework7Styles from 'framework7/dist/css/framework7.css';
+
+// Import Icons and App Custom Styles
+import IconsStyles from './css/icons.css';
+import AppStyles from './css/app.css';
 
 // Import Routes
-import Routes from './routes';
+import Routes from './routes.js';
 
-// Import App
-import App from './App';
-
-// Set up some useful globals
-window.isMaterial = !window.Framework7.prototype.device.ios;
-window.isiOS = window.Framework7.prototype.device.ios;
-
-// Import F7 iOS Theme Styles
-/* eslint-disable global-require */
-if (window.isiOS) {
-  const Framework7Theme =
-    require('framework7/dist/css/framework7.ios.min.css');
-  const Framework7ThemeColors =
-    require('framework7/dist/css/framework7.ios.colors.min.css');
-} else {
-  /* OR for Material Theme: */
-  const Framework7ThemeMaterial =
-    require('framework7/dist/css/framework7.material.min.css');
-  const Framework7ThemeColorsMaterial =
-    require('framework7/dist/css/framework7.material.colors.min.css');
-}
+// Import App Component
+import App from './app';
 
 // Init F7 Vue Plugin
-Vue.use(Framework7Vue);
+Vue.use(Framework7Vue, Framework7);
 
 // Init App
-new Vue({ // eslint-disable-line no-new
+const baseApp = new Vue({
   el: '#app',
-  template: '<app />',
+  template: '<app/>',
   // Init Framework7 by passing parameters here
   framework7: {
-    root: '#app',
-    material: window.isMaterial,
-    routes: Routes,
-    animateNavBackIcon: window.isiOS,
-    pushState: true,
-    pushStateNoAnimation: true
+    id: 'io.framework7.testapp', // App bundle ID
+    name: 'Framework7', // App name
+    theme: 'auto', // Automatic theme detection
+    // App routes
+    routes: Routes
   },
   // Register App Component
   components: {
