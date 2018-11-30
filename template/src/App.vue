@@ -1,19 +1,28 @@
 <template>
   <!-- App -->
-  <div id="app">
+  <f7-app :params="f7params">
 
     <!-- Statusbar -->
     <f7-statusbar></f7-statusbar>
 
     <!-- Main View -->
-    <f7-view id="main-view" url="/" main></f7-view>
+    <f7-view url="/" :main="true"></f7-view>
 
-
-  </div>
+  </f7-app>
 </template>
 
 <script>
+import routes from './routes';
 export default {
+  data() {
+    return {
+      f7params: {
+        theme: 'auto',
+        routes,
+        id: 'io.framework7.testapp',
+      },
+    };
+  },
   name: 'App',
   methods: {
     handleBackButton() {
