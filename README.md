@@ -8,7 +8,7 @@ Vue.js, Framework7, and Cordova / PhoneGap Template with Babel, Webpack and Hot 
 
 ### Prerequisites
 
-To use this template, you'll need Node.js v5 or newer.
+To use this template, you'll need Node.js v6 or newer.
 
 ### Installation
 
