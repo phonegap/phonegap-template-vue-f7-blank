@@ -16,19 +16,14 @@ import App from '@/app';
 let vm;
 
 // Init F7 Vue Plugin
-Vue.use(Framework7Vue, Framework7);
+Framework7.use(Framework7Vue);
 
 describe('App.vue', () => {
   beforeEach(() => {
     vm = new Vue({
       // eslint-disable-line no-new
       el: document.createElement('div'),
-      render: h => h(App),
-      // Init Framework7 by passing parameters here
-      // The absolute minimum is an empty routes array
-      framework7: {
-        routes: []
-      }
+      render: h => h(App)
     });
   });
 
