@@ -14,7 +14,8 @@ import Framework7Styles from 'framework7/css/framework7.css';
 import Home from '@/pages/home';
 
 // Init F7 Vue Plugin
-Framework7.use(Framework7Vue);
+// Apparently don't need to load this in again????
+//Framework7.use(Framework7Vue);
 
 let vm;
 
