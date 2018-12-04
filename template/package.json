@@ -44,7 +44,7 @@
     "babel-eslint": "^9.0.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^8.0.0",
-    "babel-plugin-transform-vue-jsx": "^3.5.0",
+    "babel-plugin-transform-vue-jsx": "^4.0.1",
     "chai": "^3.5.0",
     "chalk": "^2.0.1",
     "chromedriver": "^2.21.2",
