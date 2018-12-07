@@ -4,9 +4,10 @@
   "description": "A blank PhoneGap template using Vue.js and Framework7",
   "author": "tommy-carlos williams <tommy@devgeeks.org>",
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "build": "node build/build.js",
+    "build-dev": "node ./build/dev.js",
+    "build-prod": "node ./build/prod.js",
+    "dev": "webpack-dev-server --config ./build/webpack.config.dev.js",
+    "prod": "webpack-dev-server --config ./build/webpack.config.prod.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "unit-watch": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "test": "npm run unit",
@@ -94,11 +95,10 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^4.27.1",
-    "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^3.1.10",
-    "webpack-hot-middleware": "^2.12.2",
-    "webpack-merge": "^4.1.0"
+    "webpack": "^4.20.0",
+    "webpack-bundle-analyzer": "^3.0.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   },
   "engines": {
     "node": ">= 6.0.0",
