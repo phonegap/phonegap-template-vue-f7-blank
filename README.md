@@ -69,7 +69,7 @@ npm run cordova-run-android
 To build the app without the development hot module reloading server:
 
 ```
-npm run build
+npm run build-prod
 ```
 
 After that, the normal Cordova / PhoneGap commands can be used such as `phonegap serve`, or `cordova run ios`, etc.
